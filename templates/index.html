@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynthGenAI Dataset Generator</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="/static/images/logo.jpg" alt="SynthGenAI Logo" class="logo">
+        <h1>Usama GenAI Dataset Generator</h1>
+        <p class="subtitle">Generate custom datasets with ease</p>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <img src="/static/images/ai-assistant.jpg" alt="AI Assistant" class="ai-assistant">
+            <form id="dataset-form">
+                <label for="dataset_type">Dataset Type:</label>
+                <select id="dataset_type" name="dataset_type" required>
+                    <option value="Raw Dataset">Raw Dataset</option>
+                    <option value="Instruction Dataset">Instruction Dataset</option>
+                    <option value="Preference Dataset">Preference Dataset</option>
+                    <option value="Sentiment Analysis Dataset">Sentiment Analysis Dataset</option>
+                    <option value="Summarization Dataset">Summarization Dataset</option>
+                    <option value="Text Classification Dataset">Text Classification Dataset</option>
+                </select>
+
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic" placeholder="e.g., Technology" required>
+
+                <label for="language">Language:</label>
+                <input type="text" id="language" name="language" value="English" required>
+
+                <label for="num_samples">Number of Samples:</label>
+                <input type="number" id="num_samples" name="num_samples" min="1" placeholder="e.g., 10" required>
+
+                <label for="additional_description">Additional Description:</label>
+                <textarea id="additional_description" name="additional_description" placeholder="Optional details..."></textarea>
+
+                <label for="domains">Domains (comma-separated):</label>
+                <input type="text" id="domains" name="domains" placeholder="e.g., tech, science" required>
+
+                <button type="submit">Generate Dataset</button>
+            </form>
+        </div>
+
+        <div id="loading" style="display: none;">
+            <p>Generating dataset, please wait...</p>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+        </div>
+        <div id="error" style="display: none; color: red;"></div>
+        <div id="dataset-results"></div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
